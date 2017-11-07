@@ -1,5 +1,4 @@
 const R = require('ramda');
-const { generateId } = require('basket-simulation-utils');
 const { generateClub } = require('basket-simulation-club');
 
 function generateChampionship(style, level, nbClubs = 10) {
@@ -8,8 +7,7 @@ function generateChampionship(style, level, nbClubs = 10) {
   return [{
     style,
     level,
-    id: generateId(),
-    clubs: R.map(R.prop('id'), clubsForChamp)
+    clubs: []
   }, clubsForChamp];
 }
 
