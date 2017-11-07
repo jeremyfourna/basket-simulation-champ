@@ -10,7 +10,7 @@
   "author": "Jeremy Fourna <jeremyfourna@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "basket-simulation-club": "0.0.4",
+    "basket-simulation-club": "0.0.5",
     "ramda": "^0.25.0"
   },
   "devDependencies": {
