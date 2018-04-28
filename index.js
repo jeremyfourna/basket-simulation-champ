@@ -1,14 +1,21 @@
-const R = require('ramda');
+const {
+  curry,
+  map,
+  prop,
+  range
+} = require('ramda');
 const { generateClub } = require('basket-simulation-club');
+const { generateId } = require('basket-simulation-utils');
 
 function generateChampionship(style, level, nbClubs = 10) {
-  const clubsForChamp = R.map(generateClub, R.range(0, nbClubs));
+  const clubsForChamp = map(generateClub, range(0, nbClubs));
 
   return [{
     style,
     level,
-    clubs: []
+    id: generateId(),
+    clubs: map(cur => prop('id'), clubsForChamp)
   }, clubsForChamp];
 }
 
-exports.generateChampionship = generateChampionship;
+exports.generateChampionship = curry(generateChampionship);
